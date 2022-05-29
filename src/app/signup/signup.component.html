@@ -1,0 +1,25 @@
+<div class="contianer">
+  <div class="contianer__card">
+
+    <h1>Signup</h1>
+    <h4>Please enter your email and we will send your signup link</h4>
+
+    <form class="contianer__form"  [formGroup]="signupForm" (ngSubmit)="Signup()">
+
+      <label for="email">Email: </label>
+      <input id="email" type="email" required formControlName="email">
+
+      <div *ngIf="signupForm.controls['email'].invalid && signupForm.controls['email'].touched"
+        class="alert alert-danger">
+        Valid Email is required.
+      </div>
+
+      <button class="button-3" type="submit">Send Magic Link</button>
+
+
+    </form>
+
+    <a routerLink="/login"> Already have a account? Click to login </a>
+
+  </div>
+</div>

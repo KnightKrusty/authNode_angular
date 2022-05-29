@@ -1,0 +1,37 @@
+<div class="contianer">
+  <div class="contianer__card">
+
+
+    <h1>Login</h1>
+    <h4>Please enter email and Passowrd</h4>
+
+
+    <form class="contianer__form" [formGroup]="loginForm" (ngSubmit)="login()">
+
+      <label for="email">Email: </label>
+      <input id="email" type="email" required formControlName="email">
+
+      <div *ngIf="loginForm.controls['email'].invalid && loginForm.controls['email'].touched"
+        class="alert alert-danger">
+        Valid Email is required.
+      </div>
+
+      <label for="password">Password: </label>
+      <input id="password" type="password" required formControlName="password">
+
+      <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched"
+        class="alert alert-danger">
+        Passowrd must be atleast 10 character long
+      </div>
+
+      <a routerLink="/forgotpassword"> Forgot Password?</a>
+
+      <button class="button-3" type="submit">Login</button>
+
+    </form>
+
+    <a routerLink="/signup"> Dont have a account? Click here to SignUp </a>
+
+
+  </div>
+</div>

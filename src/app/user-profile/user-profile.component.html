@@ -1,0 +1,19 @@
+<div class="contianer">
+
+  <div class="contianer__card">
+    <h1>User Profile</h1>
+
+    <div>
+
+      <div *ngFor="let user of userdata | keyvalue">
+        <p>
+          {{ user.key }} :: {{ user.value }}
+        </p>
+      </div>
+
+      <button class="button-3" (click)="logout()"> logout </button>
+
+    </div>
+  </div>
+
+</div>

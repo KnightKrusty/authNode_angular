@@ -1,0 +1,67 @@
+<div class="contianer">
+  <div class="contianer__card">
+
+    <h1>Signup: Account creation</h1>
+    <h4>Please enter account details below</h4>
+
+    <form class="contianer__form" [formGroup]="accountCreate" (ngSubmit)="createAccount()">
+
+      <label for="name">Name: </label>
+      <input id="name" type="text" required formControlName="name">
+
+      <div *ngIf="accountCreate.controls['name'].invalid && accountCreate.controls['name'].touched"
+        class="alert alert-danger">
+        Name is required.
+      </div>
+
+      <label for="password">Password: </label>
+      <input id="password" type="password" required formControlName="password">
+
+      <div *ngIf="accountCreate.controls['password'].invalid && accountCreate.controls['password'].touched"
+      class="alert alert-danger">
+      Password is required and must have 10 character
+    </div>
+
+      <label for="PasswordConfirm">PasswordConfirm: </label>
+      <input id="passwordConfirm" type="password" required formControlName="passwordConfirm">
+
+      <div *ngIf="accountCreate.controls['passwordConfirm'].invalid && accountCreate.controls['passwordConfirm'].touched"
+      class="alert alert-danger">
+      PasswordConfirm is required and must have 10 character
+    </div>
+
+      <label for="DOB">Date of Birth: </label>
+      <input id="DOB" type="date" required formControlName="dob">
+
+      <div *ngIf="accountCreate.controls['dob'].invalid && accountCreate.controls['dob'].touched"
+        class="alert alert-danger">
+        DOB is required.
+      </div>
+
+      <!-- <label for="gender">Gender: </label>
+      <input id="gender" type="text" required formControlName="gender"> -->
+
+      <select for="gender" formControlName="gender">
+        <option [ngValue]="null" disabled>Select Gender</option>
+        <option >Male</option>
+        <option >Female</option>
+        <option >Other</option>
+
+      </select>
+
+
+      <div *ngIf="accountCreate.controls['gender'].invalid && accountCreate.controls['gender'].touched"
+        class="alert alert-danger">
+        Please select your gender
+      </div>
+
+
+      <button class="button-3" type="submit">Send Magic Link</button>
+
+
+    </form>
+
+
+
+  </div>
+</div>
